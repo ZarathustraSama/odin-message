@@ -1,24 +1,4 @@
-# README
+# Odin Message
+This is the last project of the React section of The Odin Project, where the barebone of a web app for messaging between user is the main focus. It has not included real time server-client updates, but aside from that, it gets the job done.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Link to the project [here](https://www.theodinproject.com/lessons/react-new-messaging-app).
