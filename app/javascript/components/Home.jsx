@@ -3,9 +3,13 @@ import React from "react";
 import Navbar from "./Navbar";
 import Chatbox from "./Chatbox";
 
-export default () => (
-  <>
-    <Navbar />
-    <Chatbox />
-  </>
-);
+function Home() {
+  return (
+    <>
+      <Navbar />
+      <Chatbox />
+    </>
+  )
+}
+
+export default Home;

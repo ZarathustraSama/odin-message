@@ -1,7 +1,11 @@
 import React from "react";
 
-export default () => (
-  <>
-    Message
-  </>
-)
+function Message({ message }) {
+  return (
+    <>
+      <span className="message">{ message.user }: { message.content }</span>
+    </>
+  )
+}
+
+export default Message;

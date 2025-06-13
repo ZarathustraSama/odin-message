@@ -1,8 +1,12 @@
 import React from "react";
 
-export default () => (
-  <>
-    <input></input>
-    <button>Input</button>
-  </>
-)
+function InputBox({ label, onChange }) {
+  return (
+    <>
+      <label>{label}</label>
+      <input onChange={onChange} />
+    </>
+  )
+}
+
+export default InputBox;
