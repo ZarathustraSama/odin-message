@@ -1,10 +1,15 @@
 import React from "react";
 
-function InputBox({ label, onChange }) {
+function InputBox({ label, setFunction}) {
+
+  function handleChange(e) {
+    setFunction(e.target.value);
+  }
+
   return (
     <>
       <label>{label}</label>
-      <input onChange={onChange} />
+      <input onChange={handleChange} />
     </>
   )
 }
