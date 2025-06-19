@@ -1,15 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
 
 import Message from "./Message";
 
-function MessageBox () {
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-
-  }, [])
-
+function MessageBox ({ messages }) {
   if (messages.length > 0) {
     return (messages.map(m => <Message key={m.id} message={m} />))
   }
