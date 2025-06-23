@@ -12,7 +12,7 @@ function Chatbox() {
 
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
-  const [selectedUserId, setSelectedUserId] = useState(null);
+  const [selectedUserId, setSelectedUserId] = useState("");
   const [message, setMessage] = useState("");
 
 
