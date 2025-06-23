@@ -1,7 +1,7 @@
 class Api::V1::MessagesController < ApplicationController
   before_action :authenticate_user!
   def index
-    messages = Message.sender_id(current_user.id).order(created_at:)
+    messages = Message.all.order(:created_at)
     render json: messages
   end
 
@@ -17,6 +17,6 @@ class Api::V1::MessagesController < ApplicationController
   private
 
   def message_params
-    params.permit(:sender_id, :receiver_id, :content)
+    params.permit(:receiver_id, :content).merge(:sender_id => current_user.id)
   end
 end
