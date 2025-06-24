@@ -79,13 +79,18 @@ function Chatbox() {
     .catch((err) => console.log(err));
   }
 
+  function handleEnterKey(e) {
+    if (e.key === "Enter")
+      handleClick(e);
+  }
+
   return (
     <>
       <main className="chatbox">
         <MessageBox messages={messages} />
         <form action="">
-          <Select value={selectedUserId} options={users} setOption={setUsers} />
-          <Input value={message} setValue={setMessage} />
+          <Select options={users} setUserId={setSelectedUserId} />
+          <Input value={message} setValue={setMessage} handleEnterKey={handleEnterKey} />
           <Button value={buttonValue} onClick={handleClick} />
         </form>
       </main>
