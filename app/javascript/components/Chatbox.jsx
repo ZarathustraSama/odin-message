@@ -54,7 +54,7 @@ function Chatbox() {
     const token = document.querySelector('meta[name="csrf-token"]').content;
     const body = {selectedUserId, message};
 
-    if (!!selectedUserId || message.length == 0) 
+    if (!selectedUserId || message.length == 0)
       return;
 
     fetch(url, {
