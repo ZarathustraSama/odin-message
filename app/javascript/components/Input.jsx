@@ -2,7 +2,7 @@ import React from "react";
 
 function Input({ value, setValue }) {
   return (
-    <input value={value} onChange={(e) => {setValue(e.currentTarget.value)}} />
+    <input id="message" name="message" value={value} onChange={(e) => {setValue(e.currentTarget.value)}} />
   )
 }
 
