@@ -8,12 +8,12 @@ import Select from "./Select";
 
 function Chatbox() {
   const buttonValue = "Send";
-  let update = false;
 
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState("");
   const [message, setMessage] = useState("");
+  const [update, setUpdate] = useState(0);
 
 
   // First we fetch the list of users except the current one
@@ -31,7 +31,7 @@ function Chatbox() {
       setSelectedUserId(res[0].id);
     })
     .catch((err) => console.log(err))
-  }, [update]);
+  }, []);
 
   // Then we fetch the messages sent up until now between them
   useEffect(() => {
@@ -45,14 +45,17 @@ function Chatbox() {
     })
     .then((res) => setMessages(res))
     .catch((error) => console.log(error))
-  }, [])
+  }, [update])
 
   function handleClick(e) {
     e.preventDefault();
 
     const url = "api/v1/messages/create";
     const token = document.querySelector('meta[name="csrf-token"]').content;
-    const body = {selectedUserId, message};
+    const body = {
+      recipient: selectedUserId, 
+      content: message
+    };
 
     if (!selectedUserId || message.length == 0)
       return;
@@ -67,7 +70,9 @@ function Chatbox() {
     })
     .then((res) => {
       if (res.ok) {
-        update = true;
+        setUpdate(update+1);
+        setMessage("");
+        return;
       }
       throw new Error("Message response was not ok.");
     })
