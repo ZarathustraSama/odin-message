@@ -3,7 +3,7 @@ import React from "react";
 function Message({ message }) {
   return (
     <>
-      <span className="message">{ message.user }: { message.content }</span>
+      <span className="message">{ message }</span>
     </>
   )
 }
