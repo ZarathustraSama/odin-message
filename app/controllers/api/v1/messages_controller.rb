@@ -17,6 +17,7 @@ class Api::V1::MessagesController < ApplicationController
   private
 
   def message_params
-    params.permit(:receiver_id, :content).merge(:sender_id => current_user.id)
+    recipient = User.find_by(id: params[:recipient])
+    params.require(:message).permit(:content).merge(:sender => current_user, :recipient => recipient)
   end
 end
