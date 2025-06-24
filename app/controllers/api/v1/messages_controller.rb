@@ -1,7 +1,7 @@
 class Api::V1::MessagesController < ApplicationController
   before_action :authenticate_user!
   def index
-    messages = Message.all.order(:created_at)
+    messages = Message.where(sender: current_user).or(Message.where(recipient: current_user)).order(:created_at)
     render json: messages
   end
 
