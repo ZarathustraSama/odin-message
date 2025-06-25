@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'profile/show/:id' => 'profile#show'
+      get 'profile/show(/:id?)' => 'profile#show'
       put 'profile/update'
+      post 'profile/create'
       get 'users/index'
       get 'messages/index'
       post 'messages/create'
     end
   end
   root 'homepage#index'
-  get 'profile#index'
+  get '/profile(/:id?)' => 'profile#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
