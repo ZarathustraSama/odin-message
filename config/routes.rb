@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'profile/show'
+      get 'profile/show/:id' => 'profile#show'
       put 'profile/update'
       get 'users/index'
       get 'messages/index'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   root 'homepage#index'
-  get '/*path' => 'homepage#index'
+  get 'profile#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
