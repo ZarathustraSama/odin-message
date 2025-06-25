@@ -25,6 +25,6 @@ class Api::V1::ProfileController < ApplicationController
   private
 
   def profile_params
-    params.permit(:nickname, :birthday, :bio).merge(:user => current_user)
+    params.require(:profile).permit(:nickname, :birthday, :bio).merge(:user => current_user)
   end
 end
