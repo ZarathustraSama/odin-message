@@ -22,7 +22,7 @@ function ProfileForm({ method, profile = defaultProfile }) {
   function handleSubmit(e) {
     e.preventDefault();
     
-    const url = "api/v1/profile/create";
+    const url = method == "POST" ? "api/v1/profile/create" : "api/v1/profile/update";
     const token = document.querySelector('meta[name="csrf-token"]').content;
     const body = {nickname, birthday, bio};
 
@@ -36,7 +36,7 @@ function ProfileForm({ method, profile = defaultProfile }) {
     })
     .then((res) => {
       if (res.ok) {
-        navigate("/profile");
+        navigate(0);
       }
       throw new Error("Profile response was not ok.");
     })
@@ -54,7 +54,7 @@ function ProfileForm({ method, profile = defaultProfile }) {
       <Input idName={"nickname"} value={nickname} setValue={setNickname} handleEnterKey={handleEnterKey} />
       <Input idName={"birthday"} type={"date"} value={birthday} setValue={setBirthday} handleEnterKey={handleEnterKey} />
       <Input idName={"bio"} type={"textfield"} value={bio} setValue={setBio} handleEnterKey={handleEnterKey} />
-      <Button value={"Create Profile"} onClick={handleSubmit} />
+      <Button value={"Submit"} onClick={handleSubmit} />
     </form>
   )
 }
