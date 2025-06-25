@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      get 'profile/show'
+      put 'profile/update'
       get 'users/index'
-      get 'users/show'
       get 'messages/index'
       post 'messages/create'
     end
   end
   root 'homepage#index'
+  get '/*path' => 'homepage#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
