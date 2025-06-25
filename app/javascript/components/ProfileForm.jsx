@@ -10,11 +10,11 @@ function ProfileForm() {
   const [nickname, setNickname] = useState("");
   const [birthday, setBirthday] = useState("");
   const [bio, setBio] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     
-    const navigate = useNavigate();
     const url = "api/v1/profile/create";
     const token = document.querySelector('meta[name="csrf-token"]').content;
     const body = {nickname, birthday, bio};
