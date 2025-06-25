@@ -6,10 +6,10 @@ import Input from "./Input";
 import Button from "./Button";
 
 
-function ProfileForm({ nickname, birthday, bio, method }) {
-  const [nickname, setNickname] = useState(nickname || "");
-  const [birthday, setBirthday] = useState(birthday || "");
-  const [bio, setBio] = useState(bio || "");
+function ProfileForm({ profile, method }) {
+  const [nickname, setNickname] = useState(profile.nickname || "");
+  const [birthday, setBirthday] = useState(profile.birthday || "");
+  const [bio, setBio] = useState(profile.bio || "");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
