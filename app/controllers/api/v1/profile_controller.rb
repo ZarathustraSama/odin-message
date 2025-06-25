@@ -9,8 +9,8 @@ class Api::V1::ProfileController < ApplicationController
   end
 
   def update
-    if params[:id] == current_user.id
-    end
+    profile = Profile.update!(profile_params)
+    redirect_to profile
   end
 
   def create
