@@ -47,6 +47,7 @@ function Chatbox() {
     .catch((error) => console.log(error))
   }, [update])
 
+  // Pressing the enter key or the "send" button fires the creation of the message
   function handleClick(e) {
     e.preventDefault();
 
@@ -87,7 +88,7 @@ function Chatbox() {
   return (
     <>
       <main className="chatbox">
-        <MessageBox messages={messages} />
+        <MessageBox messages={messages} selectedUserId={selectedUserId} />
         <form action="">
           <Select options={users} setUserId={setSelectedUserId} />
           <Input value={message} setValue={setMessage} handleEnterKey={handleEnterKey} />
