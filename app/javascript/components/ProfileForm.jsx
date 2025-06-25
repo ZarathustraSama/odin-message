@@ -5,11 +5,18 @@ import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import Button from "./Button";
 
+function defaultProfile() {
+  return {
+    nickname: "",
+    birthday: "",
+    bio: ""
+  }
+}
 
-function ProfileForm({ profile, method }) {
-  const [nickname, setNickname] = useState(profile.nickname || "");
-  const [birthday, setBirthday] = useState(profile.birthday || "");
-  const [bio, setBio] = useState(profile.bio || "");
+function ProfileForm({ method, profile = defaultProfile }) {
+  const [nickname, setNickname] = useState(profile.nickname);
+  const [birthday, setBirthday] = useState(profile.birthday);
+  const [bio, setBio] = useState(profile.bio);
   const navigate = useNavigate();
 
   function handleSubmit(e) {
