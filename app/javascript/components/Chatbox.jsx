@@ -91,7 +91,7 @@ function Chatbox() {
         <MessageBox messages={messages} selectedUserId={selectedUserId} />
         <form action="">
           <Select options={users} setUserId={setSelectedUserId} />
-          <Input value={message} setValue={setMessage} handleEnterKey={handleEnterKey} />
+          <Input idName={"message"} value={message} setValue={setMessage} handleEnterKey={handleEnterKey} />
           <Button value={buttonValue} onClick={handleClick} />
         </form>
       </main>

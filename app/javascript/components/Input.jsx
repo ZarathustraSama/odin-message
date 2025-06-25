@@ -1,10 +1,10 @@
 import React from "react";
 
-function Input({ value, setValue, handleEnterKey }) {
+function Input({ idName, value, setValue, handleEnterKey }) {
   return (
     <input 
-      id="message" 
-      name="message" 
+      id={idName}
+      name={idName} 
       value={value} 
       onChange={(e) => {setValue(e.currentTarget.value)}}
       onKeyUp={(e) => {handleEnterKey(e)}}
