@@ -6,10 +6,10 @@ import Input from "./Input";
 import Button from "./Button";
 
 
-function ProfileForm() {
-  const [nickname, setNickname] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [bio, setBio] = useState("");
+function ProfileForm({ nickname, birthday, bio, method }) {
+  const [nickname, setNickname] = useState(nickname || "");
+  const [birthday, setBirthday] = useState(birthday || "");
+  const [bio, setBio] = useState(bio || "");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -20,7 +20,7 @@ function ProfileForm() {
     const body = {nickname, birthday, bio};
 
     fetch(url, {
-      method: "POST",
+      method: method,
       headers: {
         "Content-Type": "application/json",
         "X-CSRF-Token": token,
