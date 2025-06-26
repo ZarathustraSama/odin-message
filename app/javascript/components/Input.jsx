@@ -9,6 +9,7 @@ function Input({ idName, value, setValue, handleEnterKey, type="text" }) {
       value={value} 
       onChange={(e) => {setValue(e.currentTarget.value)}}
       onKeyUp={(e) => {handleEnterKey(e)}}
+      onKeyDown={(e) => {handleEnterKey(e)}}
      />
   )
 }
