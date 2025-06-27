@@ -12,6 +12,10 @@ a {
   text-decoration: none;
 }
 
+select {
+  padding: 0.25em;
+}
+
 .chatbox {
   display: flex;
   flex-direction: column;
@@ -33,4 +37,20 @@ a {
 
 .message-other {
    align-self: flex-start;
+}
+
+.profile {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 33%;
+}
+
+.detail {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 2px;
+  padding: 2px;
+  width: fit-content;
 }
