@@ -50,10 +50,13 @@ function ProfileForm({ method, profile = defaultProfile }) {
   }
 
   return(
-    <form action="">
+    <form action="" className="profile">
+      <label htmlFor="nickname">Nickname</label>
       <Input idName={"nickname"} value={nickname} setValue={setNickname} handleEnterKey={handleEnterKey} />
+      <label htmlFor="birthday">Birthday</label>
       <Input idName={"birthday"} type={"date"} value={birthday} setValue={setBirthday} handleEnterKey={handleEnterKey} />
-      <Input idName={"bio"} type={"textfield"} value={bio} setValue={setBio} handleEnterKey={handleEnterKey} />
+      <label htmlFor="bio">Bio</label>
+      <Input idName={"bio"} type={"textarea"} value={bio} setValue={setBio} handleEnterKey={handleEnterKey} />
       <Button value={"Submit"} onClick={handleSubmit} />
     </form>
   )
