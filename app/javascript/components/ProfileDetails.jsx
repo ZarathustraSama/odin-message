@@ -15,9 +15,9 @@ function ProfileDetails({ profile }) {
   if (profile && !update) {
     return (
       <main className="profile">
-        <span className="nickname">{profile.nickname}</span>
-        <span className="birthday">{profile.birthday}</span>
-        <article className="bio">{profile.bio}</article>
+        <span className="detail nickname">{profile.nickname}</span>
+        <span className="detail birthday">{profile.birthday}</span>
+        <article className="detail bio">{profile.bio}</article>
         <Button value={"Update"} onClick={changeToForm} />
       </main>
     )
